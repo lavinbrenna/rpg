@@ -1,14 +1,14 @@
 .container{
-  background-color: red;
+  background-color: antiquewhite;
 }
 
-#player{
+#playerBox{
   border: solid black 5px;
   width: 45%;
   margin: auto;
 }
 
-#enemy{
+#enemyBox{
   border: solid black 5px;
   width: 45%;
   margin: auto;

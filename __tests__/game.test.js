@@ -39,12 +39,12 @@ describe('Game', () => {
     game.addPlayer(player);
     game.addEnemy(enemy);
     game.playerTurn();
-    expect(game.enemies[1].health).toEqual(30);
+    expect(game.enemies[1].health).toEqual(50);
   });
   it('should subtract enemy.atkDmg from player.health', ()=> {
     game.addPlayer(player);
     game.addEnemy(enemy);
     game.enemyTurn();
-    expect(game.players[1].health).toEqual(93);
+    expect(game.players[1].health).toEqual(100);
   });
 });

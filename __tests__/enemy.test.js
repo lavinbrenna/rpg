@@ -13,7 +13,10 @@ describe('Enemy', () => {
     expect(enemy.atkDmg).toEqual(7);
     expect(enemy.inventory).toEqual({});
   });
-  it('should return 7', () => {
-    expect(enemy.attackValue()).toBeLessThan(20);
+  it('should return attack', () => {
+    expect(enemy.attack()).toEqual("attack");
+  });
+  it('should return block', () =>{
+    expect(enemy.block()).toEqual("block");
   });
 });

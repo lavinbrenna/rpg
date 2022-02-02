@@ -7,23 +7,25 @@
   <div class="container">
     <div id="game">
       <div class="col-med">
-        <div id="player">
+        <div id="playerBox">
             <h3>Player</h3>
-            <p>HP:</p>
-            <p>Attack Damage:</p>
+            <p>HP:<span id="playerHp"></span></p>
+            <p>Attack Damage:<span id="attack"></span></p>
             <p>Inventory:
               <ul id="inventory">
               </ul>
             </p>
-            <button type="button" id="playerAttack">Attack</button>
+            <button type="button" id="basicAttack">Attack</button>
+            <button type="button" id="specialAttack">Special</button>
+            <button type="button" id="block">Block</button>
           </div>
         </div>
 
         <div class="col-med">
-          <div id="enemy">
+          <div id="enemyBox">
             <h3>Enemy</h3>
-            <p>HP:</p>
-            <p>Attack Damage:</p>
+            <p>HP:<span id="enemyHp"></span></p>
+            <p>Attack Damage:<span></span></p>
           </div>
         </div>
       </div>

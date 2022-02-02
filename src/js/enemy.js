@@ -5,9 +5,15 @@ export default class Enemy{
     this.inventory = {};
   }
 
-  attackValue() {
-    return this.atkDmg;
+  attack() {
+    return "attack";
   }
 
-
+  block(){
+    return "block";
+  }
 }
+
+
+//enemy block method
+
