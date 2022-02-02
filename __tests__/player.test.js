@@ -8,9 +8,12 @@ describe('Player', () => {
   beforeEach(() => {
     player = new Player();
   });
-  test('should create an empty player object', () =>{
+  it('should create an empty player object', () =>{
     expect(player.health).toEqual(100);
     expect(player.atkDmg).toEqual(20);
     expect(player.inventory).toEqual({});
+  });
+  it('should return 20', () => {
+    expect(player.attackValue()).toEqual(20);
   });
 });

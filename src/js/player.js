@@ -4,4 +4,10 @@ export default class Player{
     this.atkDmg = 20;
     this.inventory = {};
   }
+
+  attackValue() {
+    return this.atkDmg;
+  }
+
+
 }
