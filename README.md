@@ -1,6 +1,6 @@
 # _{Application Name}_
 
-#### By _**Brenna Lavin**_
+#### By _**Brenna Lavin, Ryan Bass**_
 
 #### _{Brief description of application}_
 
@@ -38,7 +38,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 MIT License
 
-Copyright (c) [2022] [Brenna Lavin]
+Copyright (c) [2022] [Brenna Lavin] [Ryan Bass]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

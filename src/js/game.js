@@ -54,20 +54,16 @@ addPlayer(player){
 // }
 
 /*
+TODO:
+switch enemy once first enemy hp goes down to zero
 
+TODO:
+fix enemy turn timeout method
 
-Stretch goals -
+TODO:
+style game
 
-add player block method, if this.players[1].block === true, enemy.atkDmg = 0
-
-add enemy block method if this.enemies[1].block === true player.atkDmg = 0
-
-add interval timer to enemy attack methods
-
-add random dice roll which will choose between predetermined enemy attack/blocks
-
-add ability options for player so they have multiple attack types
-
-add initiative roll for player/enemy turn order
+TODO:
+create an array of enemies that are a mix of human and aliens, determine line of questioning.
 
 */

@@ -1,5 +1,4 @@
-/* 
- 
+/*
 startGame(){
     this.createPlayer();
     this.createEnemy();
@@ -17,3 +16,9 @@ startGame(){
     let enemy = new Enemy();
     return enemy;
   }*/
+
+
+
+
+
+
