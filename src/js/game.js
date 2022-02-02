@@ -29,6 +29,11 @@ export class Game {
     player.id = this.assignPlayerId();
     this.players[player.id] = player;
   }
+  addEnemy(enemy){
+    enemy.id = this.assignEnemyId();
+    this.enemies[enemy.id] = enemy;
+  }
+
 
 }
 export {Player, Enemy};

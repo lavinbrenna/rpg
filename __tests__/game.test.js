@@ -31,4 +31,8 @@ describe('Game', () => {
     game.addPlayer(player);
     expect(game.players[1]).toEqual(player);
   });
+  it('should add enemy to enemies', () =>{
+    game.addEnemy(enemy);
+    expect(game.enemies[1]).toEqual(enemy);
+  });
 });
