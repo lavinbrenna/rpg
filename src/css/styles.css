@@ -1,0 +1,15 @@
+.container{
+  background-color: red;
+}
+
+#player{
+  border: solid black 5px;
+  width: 45%;
+  margin: auto;
+}
+
+#enemy{
+  border: solid black 5px;
+  width: 45%;
+  margin: auto;
+}

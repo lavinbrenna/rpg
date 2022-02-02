@@ -33,7 +33,12 @@ export class Game {
     enemy.id = this.assignEnemyId();
     this.enemies[enemy.id] = enemy;
   }
-
+  playerTurn(){
+    this.enemies[1].health -= this.players[1].atkDmg;
+  }
+  enemyTurn(){
+    this.players[1].health -= this.enemies[1].atkDmg;
+  }
 
 }
 export {Player, Enemy};
