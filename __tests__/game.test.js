@@ -15,12 +15,14 @@ describe('Game', () => {
     expect(game.players).toEqual({});
     expect(game.enemies).toEqual({});
   });
+  /* These tests are no longer necessary, we are no longer creating the player or enemy within the game object
   it('should create player in game object', () =>{
     expect(game.createPlayer()).toEqual(player);
   });
   it('should create enemy in game object', () =>{
     expect(game.createEnemy()).toEqual(enemy);
   });
+  */
   it('should assign playerId, playerId = 1', () =>{
     expect(game.assignPlayerId()).toEqual(1);
   });
@@ -45,6 +47,6 @@ describe('Game', () => {
     game.addPlayer(player);
     game.addEnemy(enemy);
     game.enemyTurn();
-    expect(game.players[1].health).toEqual(100);
+    expect(game.players[1].health).toEqual(93);
   });
 });

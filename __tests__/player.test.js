@@ -14,12 +14,12 @@ describe('Player', () => {
     expect(player.inventory).toEqual({});
   });
   it('should return basic attack', () => {
-    expect(player.basicAttack()).toEqual("basic attack");
+    expect(player.basicAttack()).toEqual(10);
   });
   it('should return special attack', ()=>{
-    expect(player.specialAttack()).toEqual("special attack");
+    expect(player.specialAttack()).toEqual(30);
   });
   it('should return block', () =>{
-    expect(player.block()).toEqual("block");
+    expect(player.block()).toEqual(0);
   });
 });

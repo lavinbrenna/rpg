@@ -33,6 +33,11 @@ $("button#specialAttack").on('click',function(){
   game.players[player.id].specialAttack();
   game.playerTurn();
   console.log("special");
+  $("#playerHp").text(game.players[player.id].health); 
+  game.enemyTurn();
+  setTimeout(function() {
+    $("#playerHp").text(game.players[player.id].health); // yay this sorta works
+  }, 5000);
   $('#attack').text(game.players[player.id].atkDmg);
   $('#enemyHp').text(game.enemies[enemy.id].health);
 });
@@ -40,6 +45,11 @@ $("button#block").on('click',function(){
   game.players[player.id].block();
   game.playerTurn();
   console.log("block");
+  $("#playerHp").text(game.players[player.id].health); 
+  game.enemyTurn();
+  setTimeout(function() {
+    $("#playerHp").text(game.players[player.id].health); // yay this sorta works
+  }, 5000);
   $('#attack').text(game.players[player.id].atkDmg);
   $('#enemyHp').text(game.enemies[enemy.id].health);
 });
