@@ -8,7 +8,10 @@ let game = new Game();
 let player = new Player();
 let enemy = new Enemy();
 
+enemy.wrongRandomizeEnemy();
 game.addPlayer(player);
+// game.randomizeEnemy();
+console.log(game);
 game.addEnemy(enemy);
 //game.startGame();
 
