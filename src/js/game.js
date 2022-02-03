@@ -9,6 +9,7 @@ export class Game {
     this.enemyId = 0;
   }
 
+  
   assignPlayerId (){
     this.playerId +=1;
     return this.playerId;
@@ -25,6 +26,7 @@ export class Game {
   addEnemy(enemy){
     enemy.id = this.assignEnemyId();
     this.enemies[enemy.id] = enemy;
+    this.enemies[enemy.id].randomItem();
   }
   playerTurn(){
     this.enemies[1].health -= this.players[1].atkDmg;
@@ -33,37 +35,19 @@ export class Game {
     this.players[1].health -= this.enemies[1].atkDmg;
   }
 
+
 }
 export {Player, Enemy};
 
 /*
 
-
-addPlayer(player){
-  player.id = this.assignPlayerId();
-  this.players[player.id] = player;
-}
-
-
-
-*/
-
-// addPlayer(){
-//   let player = new Player;
-//   this.players.firstPlayer = player;
-// }
-
-/*
 TODO:
-switch enemy once first enemy hp goes down to zero
+switch enemy once first enemy hp goes down to zero, add enemy item to player inventory
 
 TODO:
-fix enemy turn timeout method
+create an array of enemies
 
-TODO:
-style game
-
-TODO:
-create an array of enemies that are a mix of human and aliens, determine line of questioning.
+TODO: 
+create character generator, if user presses generate character, assign random d10 rolls to each attribute. Else start game.
 
 */

@@ -1,8 +1,33 @@
 export default class Player{
-  constructor(){
+  constructor(characterType, playerName){
     this.health = 100;
-    this.inventory = {};
     this.atkDmg = 0;
+    this.characterType = characterType;
+    this.playerName = playerName;
+    // this.intel = intel;
+    // this.reflex = reflex;
+    // this.tech = tech;
+    // this.cool = cool;
+    // this.luck = luck;
+    // this.attractive = attractive;
+    // this.empathy = empathy;
+    this.inventory = [];
+  }
+
+  generateCharacter(){
+    this.intel = this.d10Roll();
+    this.reflex = this.d10Roll();
+    this.tech = this.d10Roll();
+    this.cool = this.d10Roll();
+    this.luck = this.d10Roll();
+    this.attractive = this.d10Roll();
+    this.empathy = this.d10Roll();
+  }
+
+
+  d10Roll(){
+    let num = Math.floor(Math.random()*10) + 1;
+    return num;
   }
 
   basicAttack() {
@@ -20,5 +45,3 @@ export default class Player{
   }
 
 }
-
-//player block method

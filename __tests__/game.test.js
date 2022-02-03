@@ -6,7 +6,7 @@ describe('Game', () => {
   let enemy, game, player;
 
   beforeEach(() => {
-    enemy = new Enemy();
+    enemy = new Enemy(50,7,[]);
     game = new Game();
     player = new Player();
   });
