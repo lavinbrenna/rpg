@@ -22,18 +22,78 @@ export class Game {
     player.id = this.assignPlayerId();
     this.players[player.id] = player;
   }
+  checkEnemy(){
+    console.log(this.enemies[this.enemyId].health);
+    if (this.enemies[this.enemyId].health <= 0){
+      let enemySpawn = new Enemy ();
+      this.addEnemy(enemySpawn);
+      this.wrongRandomizeEnemy();
+      return enemySpawn;
+    }
+  }
+  wrongRandomizeEnemy(){
+    let num = Math.floor(Math.random() * 8) + 1;
+    if (num == 1){
+      this.enemies[this.enemyId].enemyType = "Merc",
+      this.enemies[this.enemyId].health = 30,
+      this.enemies[this.enemyId].atkDmg = 10;
+    } else if (num == 2) {
+      this.enemies[this.enemyId].enemyType = "Arasaka TriggerMan",
+      this.enemies[this.enemyId].health = 20;
+      this.enemies[this.enemyId].atkDmg = 15;
+    } else if (num == 3) {
+      this.enemies[this.enemyId].enemyType = "Militech Commando",
+      this.enemies[this.enemyId].health = 15;
+      this.enemies[this.enemyId].atkDmg = 10;
+    } else if (num == 4) {
+      this.enemies[this.enemyId].enemyType = "Netrunner",
+      this.enemies[this.enemyId].health = 10;
+      this.enemies[this.enemyId].atkDmg = 9;
+    } else if (num == 5) {
+      this.enemies[this.enemyId].enemyType = "Street Scrapper",
+      this.enemies[this.enemyId].health = 10;
+      this.enemies[this.enemyId].atkDmg = 5;
+    } else if (num == 6) {
+      this.enemies[this.enemyId].enemyType = "Street Samurai",
+      this.enemies[this.enemyId].health = 15;
+      this.enemies[this.enemyId].atkDmg = 8;
+    } else if (num == 7) {
+      this.enemies[this.enemyId].enemyType = "Wraith Marauder",
+      this.enemies[this.enemyId].health = 10;
+      this.enemies[this.enemyId].atkDmg = 8;
+    } else if (num == 8) {
+      this.enemies[this.enemyId].enemyType = "Mech",
+      this.enemies[this.enemyId].health = 50;
+      this.enemies[this.enemyId].atkDmg = 7;
+    } else {
+      return;
+    }
+  }
   addEnemy(enemy){
     enemy.id = this.assignEnemyId();
     this.enemies[enemy.id] = enemy;
     // this.enemies[enemy.id].randomItem();
   }
   playerTurn(){
-    this.enemies[1].health -= this.players[1].atkDmg;
+    this.enemies[this.enemyId].health -= this.players[this.playerId].atkDmg;
   }
   enemyTurn(){
-    this.players[1].health -= this.enemies[1].atkDmg;
+    this.players[this.playerId].health -= this.enemies[this.enemyId].atkDmg;
   }
-  randomizeEnemy(){
+}
+export {Player, Enemy};
+
+/*
+
+TODO:
+switch enemy once first enemy hp goes down to zero, add enemy item to player inventory
+
+TODO: 
+create character generator, if user presses generate character, assign random d10 rolls to each attribute. Else start game.
+
+TODO:
+Create check enemy method
+ randomizeEnemy(){
     let randomEnemies = [
       {"enemyType":"Merc",
         "health": 30,
@@ -80,18 +140,6 @@ export class Game {
     return randomEnemies[num];
   }
 
-}
-export {Player, Enemy};
-
-/*
-
-TODO:
-switch enemy once first enemy hp goes down to zero, add enemy item to player inventory
 
 
-TODO: 
-create character generator, if user presses generate character, assign random d10 rolls to each attribute. Else start game.
-
-TODO:
-Create check enemy method
 */

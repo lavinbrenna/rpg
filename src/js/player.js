@@ -1,16 +1,16 @@
 export default class Player{
-  constructor(characterType, playerName){
+  constructor(characterType, playerName,intel, reflex, tech, cool, luck, attractive,empathy ){
     this.health = 100;
     this.atkDmg = 0;
     this.characterType = characterType;
     this.playerName = playerName;
-    // this.intel = intel;
-    // this.reflex = reflex;
-    // this.tech = tech;
-    // this.cool = cool;
-    // this.luck = luck;
-    // this.attractive = attractive;
-    // this.empathy = empathy;
+    this.intel = intel;
+    this.reflex = reflex;
+    this.tech = tech;
+    this.cool = cool;
+    this.luck = luck;
+    this.attractive = attractive;
+    this.empathy = empathy;
     this.inventory = [];
   }
 

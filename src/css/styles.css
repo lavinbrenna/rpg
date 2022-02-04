@@ -1,5 +1,91 @@
+body{
+background-color:black;
+font-family: moby, sans-serif;
+font-weight: 700;
+font-style: normal;
+color: #ff577d;
+}
+h1{
+  font-family: ethnocentric, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:#ff577d;
+  text-align:center;
+  text-shadow: 0 0 7px #ff2a6d,
+  0 0 10px #0a9cf5,
+  0 0 21px #ff2a6d,
+  0 0 42px #0a9cf5,
+  0 0 82px #ff2a6d,
+  0 0 92px #0a9cf5;
+}
 .container{
-  background-color: antiquewhite;
+  background-color: #29132e;
+  border-radius: 10px;
+}
+#startGame, #create{
+  background-color: #0a9cf5;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: ethnocentric, sans-serif;
+}
+.gameStart{
+  background-color: #0a9cf5;
+  display: block;
+  margin:auto;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: ethnocentric, sans-serif;
+}
+#startGame:active, #create:active, .gameStart:active{
+  color: #ff2a6d;
+  box-shadow: 0 0 7px #ff2a6d,
+  0 0 10px #0a9cf5,
+  0 0 21px #ff2a6d,
+  0 0 42px #0a9cf5,
+  0 0 82px #ff2a6d,
+  0 0 92px #0a9cf5,
+  0 0 102px #ff2a6d,
+  0 0 151px #0a9cf5;
+  border: 0px;
+}
+#playerSelectScreen, #createPlayerScreen, #randomizePlayerScreen, #characterDescription{
+  display: none;
+}
+
+#createPlayerScreen{
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 50%;
+}
+#characterDescription h2, p{
+  text-shadow: 0 0 7px #ff2a6d,
+  0 0 10px #0a9cf5,
+  0 0 21px #ff2a6d,
+  0 0 42px #0a9cf5,
+  0 0 82px #ff2a6d,
+  0 0 92px #0a9cf5;
+}
+#characterDescription p{
+  color:#0a9cf5;
+}
+#playerForm{
+  float:left;
+}
+#characterDescription{
+  text-align: center;
+}
+
+#gameBox{
+  display: none;
 }
 
 #playerBox{
@@ -16,4 +102,7 @@
 /*
 TODO:
 style game
+
+Note: color palette
+#ff184c, #ff577d, #ffccdc, #0a9cf5, #003062,#ff2a6d, #d1f7ff, #005678, #29132e
 */
