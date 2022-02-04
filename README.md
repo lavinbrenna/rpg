@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _Cyberpunk RPG_
 
 #### By _**Brenna Lavin, Ryan Bass**_
 
-#### _{Brief description of application}_
+#### _Create a character and fight some enemies_
 
 ## Technologies Used
 
@@ -12,10 +12,14 @@
 * jQuery
 * BootStrap
 * Jest
-  
+* Webpack
+* ESLint
+* Babel
+* Popper.js
+
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This simple RPG was made to get familiar with testing with Jest while using object oriented programming. Create your character and see how many enemies you can defeat before they knock you out._
 
 ## Setup/Installation Requirements
 
@@ -24,14 +28,10 @@ _{This is a detailed description of your application. Give as much detail as nee
 * type ```$ npm install``` to install project dependencies
 * type ```$ npm run test``` to run developer tests
 * type ```$ npm run start``` to start live server and open in browser.
-* Else navigate to project via GH Pages link
-* [GH Pages](https://lavinbrenna.github.io/pizza-parlor/)
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
 
 ## Known Bugs
 
-
+* WIP, no known bugs
 ## License
 
 MIT License
