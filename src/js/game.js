@@ -25,60 +25,60 @@ export class Game {
   checkEnemy(){
     console.log(this.enemies[this.enemyId].health);
     if (this.enemies[this.enemyId].health <= 0){
+      this.randomItem();
+      console.log(this.players[this.playerId].inventory);
       let enemySpawn = new Enemy ();
       this.addEnemy(enemySpawn);
       this.wrongRandomizeEnemy();
       return enemySpawn;
     }
   }
-  wrongRandomizeEnemy(){
+
+  randomizeEnemy(){
     let num = Math.floor(Math.random() * 8) + 1;
     if (num == 1){
-      this.enemies[this.enemyId].enemyType = "Merc",
-      this.enemies[this.enemyId].health = 30,
-      this.enemies[this.enemyId].atkDmg = 10;
+      let enemy = new Enemy("Merc", 30, 10);
+      return enemy;
     } else if (num == 2) {
-      this.enemies[this.enemyId].enemyType = "Arasaka TriggerMan",
-      this.enemies[this.enemyId].health = 20;
-      this.enemies[this.enemyId].atkDmg = 15;
+      let enemy = new Enemy("Arasaka Triggerman", 20, 15);
+      return enemy;
     } else if (num == 3) {
-      this.enemies[this.enemyId].enemyType = "Militech Commando",
-      this.enemies[this.enemyId].health = 15;
-      this.enemies[this.enemyId].atkDmg = 10;
+      let enemy = new Enemy("Militech Commando", 15, 10);
+      return enemy;
     } else if (num == 4) {
-      this.enemies[this.enemyId].enemyType = "Netrunner",
-      this.enemies[this.enemyId].health = 10;
-      this.enemies[this.enemyId].atkDmg = 9;
+      let enemy = new Enemy("Netrunner", 10, 9);
+      return enemy;
     } else if (num == 5) {
-      this.enemies[this.enemyId].enemyType = "Street Scrapper",
-      this.enemies[this.enemyId].health = 10;
-      this.enemies[this.enemyId].atkDmg = 5;
+      let enemy = new Enemy("Street Scrapper", 10, 5);
+      return enemy;
     } else if (num == 6) {
-      this.enemies[this.enemyId].enemyType = "Street Samurai",
-      this.enemies[this.enemyId].health = 15;
-      this.enemies[this.enemyId].atkDmg = 8;
+      let enemy = new Enemy("Street Samurai", 15, 8);
+      return enemy;
     } else if (num == 7) {
-      this.enemies[this.enemyId].enemyType = "Wraith Marauder",
-      this.enemies[this.enemyId].health = 10;
-      this.enemies[this.enemyId].atkDmg = 8;
-    } else if (num == 8) {
-      this.enemies[this.enemyId].enemyType = "Mech",
-      this.enemies[this.enemyId].health = 50;
-      this.enemies[this.enemyId].atkDmg = 7;
-    } else {
-      return;
+      let enemy = new Enemy("Wraith Marauder", 10, 8);
+      return enemy;
+    } else{
+      let enemy = new Enemy ("Mech", 40, 7);
+      return enemy;
     }
   }
   addEnemy(enemy){
     enemy.id = this.assignEnemyId();
     this.enemies[enemy.id] = enemy;
-    // this.enemies[enemy.id].randomItem();
   }
+
   playerTurn(){
     this.enemies[this.enemyId].health -= this.players[this.playerId].atkDmg;
   }
   enemyTurn(){
     this.players[this.playerId].health -= this.enemies[this.enemyId].atkDmg;
+  }
+
+  randomItem(){
+    this.items = ['Bounce Back MK1', 'Augmented Reality Game Box', 'EMP Grenade', 'Steel-Toed Carbon Fiber Glitter Laceless Boots', 'Assault Rifle', 'Wire Scraps', 'Burnt Out Ram', 'Skill Shard: Street Brawler', 'Soy Paste', 'Broseph Ale', 'Holobites Grape Pie', 'Slaughterhouse Veggie Burger', 'Capacity Booster','Health Booster','Oni Mask','Corpo Blazer','Bulletproof Windbreaker','Classic Leather Pants','Satori Katana'];
+    let num = Math.floor(Math.random() * 20) + 1;
+    this.players[this.playerId].inventory.push(this.items[num]);
+    console.log(this.players[this.playerId].inventory);
   }
 }
 export {Player, Enemy};

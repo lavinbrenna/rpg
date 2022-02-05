@@ -44,4 +44,9 @@ export default class Player{
     return this.atkDmg;
   }
 
+  randomItem(){
+    this.items = ['Bounce Back MK1', 'Augmented Reality Game Box', 'EMP Grenade', 'Steel-Toed Carbon Fiber Glitter Laceless Boots', 'Assault Rifle', 'Wire Scraps', 'Burnt Out Ram', 'Skill Shard: Street Brawler', 'Soy Paste', 'Broseph Ale', 'Holobites Grape Pie', 'Slaughterhouse Veggie Burger', 'Capacity Booster','Health Booster','Oni Mask','Corpo Blazer','Bulletproof Windbreaker','Classic Leather Pants','Satori Katana'];
+    let num = Math.floor(Math.random() * 20)-1;
+    this.inventory.push(this.items[num]);
+  }
 }

@@ -21,8 +21,9 @@ h1{
 .container{
   background-color: #29132e;
   border-radius: 10px;
+  align-items: center;
 }
-#startGame, #create{
+#startGame{
   background-color: #0a9cf5;
   position: absolute;
   left: 50%;
@@ -34,6 +35,19 @@ h1{
   border-radius: 10px;
   font-family: ethnocentric, sans-serif;
 }
+#create, #randomize{
+  background-color: #0a9cf5;
+  display: block;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width: 50%;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: ethnocentric, sans-serif; 
+}
 .gameStart{
   background-color: #0a9cf5;
   display: block;
@@ -44,7 +58,7 @@ h1{
   border-radius: 10px;
   font-family: ethnocentric, sans-serif;
 }
-#startGame:active, #create:active, .gameStart:active{
+#startGame:active, #create:active, #randomize:active, .gameStart:active{
   color: #ff2a6d;
   box-shadow: 0 0 7px #ff2a6d,
   0 0 10px #0a9cf5,

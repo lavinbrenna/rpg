@@ -1,21 +1,3 @@
-/*
-startGame(){
-    this.createPlayer();
-    this.createEnemy();
-    this.addPlayer(this.createPlayer());
-    this.addEnemy(this.createEnemy());
-  }
-
-    createPlayer(){
-    let player = new Player();
-    console.log(player);
-    return player;
-  }
-
-    createEnemy(){
-    let enemy = new Enemy();
-    return enemy;
-  }*/
 
 
 
