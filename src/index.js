@@ -19,6 +19,9 @@ $("#create").on('click', function(){
 $("#randomize").on('click', function(){
   $("#playerSelectScreen").hide();
   $("#randomizePlayerScreen").show();
+  let game = new Game();
+  let player = game.generateCharacter();
+  console.log(player);
 });
 $("#classType").on('change', function () {
   let classSelect = $("select#classType option:selected").val();

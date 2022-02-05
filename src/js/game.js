@@ -22,17 +22,52 @@ export class Game {
     player.id = this.assignPlayerId();
     this.players[player.id] = player;
   }
-  checkEnemy(){
-    console.log(this.enemies[this.enemyId].health);
-    if (this.enemies[this.enemyId].health <= 0){
-      this.randomItem();
-      console.log(this.players[this.playerId].inventory);
-      let enemySpawn = new Enemy ();
-      this.addEnemy(enemySpawn);
-      this.wrongRandomizeEnemy();
-      return enemySpawn;
-    }
+
+  generateCharacter(){
+    let character = this.randomizeCharacterType();
+    let intel = this.d10Roll();
+    let reflex = this.d10Roll();
+    let tech = this.d10Roll();
+    let cool = this.d10Roll();
+    let luck = this.d10Roll();
+    let attractive = this.d10Roll();
+    let empathy = this.d10Roll();
+    let total = intel + reflex + tech + cool + luck + attractive + empathy;
+    console.log(total);
+    while(total > 65){
+      intel,reflex, tech, cool, luck, attractive, empathy = this.d10Roll();
+      if(total <= 65){
+        let player = new Player(character,' ',intel, reflex, tech, cool, luck, attractive, empathy);
+        return player;
+      }
+    }let player = new Player(character,' ',intel, reflex, tech, cool, luck, attractive, empathy);
+    return player;
   }
+  randomizeCharacterName(){
+
+  }
+  randomizeCharacterType(){
+    let num =  Math.floor(Math.random()*9);
+    let characterClasses = ['Rockerboy', 'Solo','Netrunner', 'Techie', 'Media', 'Cop', 'Corpo','Fixer', 'Nomad'];
+    let character = characterClasses[num];
+    return character;
+  }
+  
+  d10Roll(){
+    let num = Math.floor(Math.random()*10) + 1;
+    return num;
+  }
+  // checkEnemy(){
+  //   console.log(this.enemies[this.enemyId].health);
+  //   if (this.enemies[this.enemyId].health <= 0){
+  //     this.randomItem();
+  //     console.log(this.players[this.playerId].inventory);
+  //     let enemySpawn = new Enemy ();
+  //     this.addEnemy(enemySpawn);
+  //     this.wrongRandomizeEnemy();
+  //     return enemySpawn;
+  //   }
+  // }
 
   randomizeEnemy(){
     let num = Math.floor(Math.random() * 8) + 1;
@@ -74,13 +109,14 @@ export class Game {
     this.players[this.playerId].health -= this.enemies[this.enemyId].atkDmg;
   }
 
-  randomItem(){
-    this.items = ['Bounce Back MK1', 'Augmented Reality Game Box', 'EMP Grenade', 'Steel-Toed Carbon Fiber Glitter Laceless Boots', 'Assault Rifle', 'Wire Scraps', 'Burnt Out Ram', 'Skill Shard: Street Brawler', 'Soy Paste', 'Broseph Ale', 'Holobites Grape Pie', 'Slaughterhouse Veggie Burger', 'Capacity Booster','Health Booster','Oni Mask','Corpo Blazer','Bulletproof Windbreaker','Classic Leather Pants','Satori Katana'];
-    let num = Math.floor(Math.random() * 20) + 1;
-    this.players[this.playerId].inventory.push(this.items[num]);
-    console.log(this.players[this.playerId].inventory);
-  }
+//   randomItem(){
+//     this.items = ['Bounce Back MK1', 'Augmented Reality Game Box', 'EMP Grenade', 'Steel-Toed Carbon Fiber Glitter Laceless Boots', 'Assault Rifle', 'Wire Scraps', 'Burnt Out Ram', 'Skill Shard: Street Brawler', 'Soy Paste', 'Broseph Ale', 'Holobites Grape Pie', 'Slaughterhouse Veggie Burger', 'Capacity Booster','Health Booster','Oni Mask','Corpo Blazer','Bulletproof Windbreaker','Classic Leather Pants','Satori Katana'];
+//     let num = Math.floor(Math.random() * 20) + 1;
+//     this.players[this.playerId].inventory.push(this.items[num]);
+//     console.log(this.players[this.playerId].inventory);
+//   }
 }
+
 export {Player, Enemy};
 
 /*
