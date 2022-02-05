@@ -16,6 +16,10 @@ $("#create").on('click', function(){
   $("#playerSelectScreen").hide();
   $("#createPlayerScreen").show();
 });
+$("#randomize").on('click', function(){
+  $("#playerSelectScreen").hide();
+  $("#randomizePlayerScreen").show();
+});
 $("#classType").on('change', function () {
   let classSelect = $("select#classType option:selected").val();
   if (classSelect === 'rockerBoy') {

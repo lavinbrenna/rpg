@@ -35,7 +35,7 @@ h1{
   border-radius: 10px;
   font-family: ethnocentric, sans-serif;
 }
-#create, #randomize{
+#create, #randomize, #accept, #again{
   background-color: #0a9cf5;
   display: block;
   margin: auto;
@@ -58,7 +58,7 @@ h1{
   border-radius: 10px;
   font-family: ethnocentric, sans-serif;
 }
-#startGame:active, #create:active, #randomize:active, .gameStart:active{
+#startGame:active, #create:active, #randomize:active, #accept:active, #again:active{
   color: #ff2a6d;
   box-shadow: 0 0 7px #ff2a6d,
   0 0 10px #0a9cf5,
