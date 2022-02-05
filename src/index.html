@@ -24,6 +24,9 @@
     <div id="createPlayerScreen">
       <h1>Create your character</h1>
       <p>You have 65 points to use for your abilities. Choose them wisely.</p>
+      <div id="playerScold">
+        <p><span id="scold"></span></p>
+      </div>
       <form id="createPlayerForm">
         <div id="form-group">
           <label for="playerName">Enter your name:</label>
@@ -74,9 +77,6 @@
         </div>
         <button type="submit" id="createStart">Start Game</button>
       </form>
-      <div id="playerScold">
-        <p><span id="scold"></span></p>
-      </div>
       <div id="characterDescription">
         <div id="rockerBoy">
           <h2>Rockerboy</h2>
@@ -244,9 +244,15 @@
     </div>
     <div id="randomizePlayerScreen">
       <h1>Randomize Character</h1>
-      <h2></h2>
-      <button type="button" id="accept">Accept?</button>
-      <button type="button" id="again">Generate Again?</button>
+      <form id="randomForm">
+        <div id="form-group">
+          <label for="playerName2">Enter your name: </label>
+          <input type="text" id="playerName2">
+        </div>
+        <button type="submit" id="accept">Accept</button>
+      <button type="button" id="again">Generate Again</button>
+      </form>
+      <p></p>
     </div>
     <div id="gameBox">
       <div class="col-med">
