@@ -4,9 +4,46 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import {Game, Player} from './js/game.js';
 
+let game = new Game();
+
+
+
+function saveCreatedPlayer(){
+  const name = $("input#playerName").val();
+  const selectedClass = $("select#classType option:selected").val();
+  const playerIntelligence = parseInt($("input#inputIntell").val());
+  const playerReflex = parseInt($("input#inputRef").val());
+  const playerTech = parseInt($("input#inputTech").val());
+  const playerCool = parseInt($("input#inputCool").val());
+  const playerLuck = parseInt($("input#inputLuck").val());
+  const playerAttractiveness = parseInt($("input#inputAttractive").val());
+  const playerEmp = parseInt($("input#inputEmpathy").val());
+  if ((playerIntelligence + playerReflex + playerTech + playerCool + playerLuck + playerAttractiveness + playerEmp) > 65) {
+    alert("Hey scumbag, you tryna' pull one over on me? You want some jobs or not?");
+  } else if ((isNaN(playerIntelligence) || isNaN(playerReflex) || isNaN(playerTech) || isNaN(playerCool) ||
+      isNaN(playerLuck) || isNaN(playerAttractiveness) || isNaN(playerEmp)) || (name === "") || (selectedClass === "default")) {
+    alert(" I ain't got time for games kid. Don't come cryin' to me if you wake up on some Ripper Doc's table gettin' yer mods yanked out.");
+  } else {
+    let player = new Player(selectedClass, name, playerIntelligence, playerReflex, playerTech, playerCool, playerLuck, playerAttractiveness, playerEmp);
+    return player;
+  }
+}
+function saveRandomlyGeneratedCharacter(){
+  const playerType = $("span#randoClass").html();
+  console.log(playerType);
+  const playerN = $("span#randoName").html();
+  const playerIn = $("span#randIntel").html();
+  const playerFlex = $("span#randReflex").html();
+  const playerT = $("span#randTech").html();
+  const playerC = $("span#randCool").html();
+  const playerL = $("span#randLuck").html();
+  const playerA = $("span#randAttract").html();
+  const playerE = $("span#randEmpathy").html();
+  let player = new Player(playerType, playerN, playerIn, playerFlex, playerT, playerC, playerL, playerA, playerE);
+  return player;
+}
 $("#startGame").on('click', function () {
   $("#startGameScreen").hide();
-  console.log("click!");
   $("#playerSelectScreen").show();
 });
 
@@ -51,36 +88,19 @@ $("#classType").on('change', function () {
 
 $("#createStart").on('click', function (event) {
   event.preventDefault();
-  const name = $("input#playerName").val();
-  const selectedClass = $("select#classType option:selected").val();
-  const playerIntelligence = parseInt($("input#inputIntell").val());
-  const playerReflex = parseInt($("input#inputRef").val());
-  const playerTech = parseInt($("input#inputTech").val());
-  const playerCool = parseInt($("input#inputCool").val());
-  const playerLuck = parseInt($("input#inputLuck").val());
-  const playerAttractiveness = parseInt($("input#inputAttractive").val());
-  const playerEmp = parseInt($("input#inputEmpathy").val());
-  if ((playerIntelligence + playerReflex + playerTech + playerCool + playerLuck + playerAttractiveness + playerEmp) > 65) {
-    alert("Hey scumbag, you tryna' pull one over on me? You want some jobs or not?");
-  } else if ((isNaN(playerIntelligence) || isNaN(playerReflex) || isNaN(playerTech) || isNaN(playerCool) ||
-      isNaN(playerLuck) || isNaN(playerAttractiveness) || isNaN(playerEmp)) || (name === "") || (selectedClass === "default")) {
-    alert(" I ain't got time for games kid. Don't come cryin' to me if you wake up on some Ripper Doc's table gettin' yer mods yanked out.");
-  } else {
-    let player = new Player(selectedClass, name, playerIntelligence, playerReflex, playerTech, playerCool, playerLuck, playerAttractiveness, playerEmp);
-    $("#createPlayerScreen").hide();
-    $("#gameBox").show();
-    let game = new Game();
-    let enemy = game.randomizeEnemy();
-    game.addPlayer(player);
-    game.addEnemy(enemy);
-    console.log(player);
-  }
+  let player = saveCreatedPlayer();
+  console.log(player);
+  game.addPlayer(player);
+  let enemy = game.randomizeEnemy();
+  game.addEnemy(enemy);
+  console.log(game);
+  $("#createPlayerScreen").hide();
+  $("#gameBox").show();
 });
 
 $("#randomize, #again").on('click', function(){
   $("#playerSelectScreen").hide();
   $("#randomizePlayerScreen, #randomCD, #randoStats").show();
-  let game = new Game();
   let player = game.generateCharacter();
   console.log(player);
   $("#randoName").text(player.playerName);
@@ -124,6 +144,16 @@ $("#randomize, #again").on('click', function(){
   }
 });
 
+$("#accept").on('click', function(){
+  let player = saveRandomlyGeneratedCharacter();
+  console.log(player);
+  game.addPlayer(player);
+  let enemy = game.randomizeEnemy();
+  game.addEnemy(enemy);
+  console.log(game);
+  $("#randomizePlayerScreen").hide();
+  $("#gameBox").show();
+});
 
 
 

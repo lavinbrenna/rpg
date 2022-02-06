@@ -46,7 +46,7 @@ export class Game {
   }
   randomizeCharacterName(){
     let randoNames = ['Alt', 'Ava', 'Da5id', 'Case', 'Richter', 'Dex', 'Tal', 'Yuki', 'Hiro', 'Bishop', 'Armitage', 'Neo', 'Deckard', 'Quaid', 'Joi', 'Mara', 'Melina', 'Panam', 'Wolf', 'Grey'];
-    let num = Math.floor(Math.random()* randoNames.length -1);
+    let num = Math.floor(Math.random()* 20);
     return randoNames[num];
   }
   randomizeCharacterType(){
