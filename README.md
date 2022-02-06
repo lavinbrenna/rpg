@@ -19,7 +19,7 @@
 
 ## Description
 
-_This simple RPG was made to get familiar with testing with Jest while using object oriented programming. Create your character and see how many enemies you can defeat before they knock you out._
+_This simple RPG was at first made to get familiar with testing with Jest while using object oriented programming, but is now a growing project which allows for the user to create their own character or for them to have it randomly generated. Currently the combat logic is in progress, but is on the way!_
 
 ## Setup/Installation Requirements
 
@@ -31,7 +31,7 @@ _This simple RPG was made to get familiar with testing with Jest while using obj
 
 ## Known Bugs
 
-* WIP, no known bugs
+* WIP
 ## License
 
 MIT License
