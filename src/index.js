@@ -77,27 +77,54 @@ $("#createStart").on('click', function (event) {
   }
 });
 
-// $("#randomize").on('click', function(){
-//   $("#playerSelectScreen").hide();
-//   $("#randomizePlayerScreen,").show();
-//   $("#randomizePlayerScreen, #randomCharacterDescription, #randoStats").show();
-//   let game = new Game();
-//   let player = game.generateCharacter();
-//   console.log(player);
-//   $("#randoName").text(player.playerName);
-//   $("#randoClass").text(player.characterType);
-//   $("#randIntel").text(player.intel);
-//   $("#randReflex").text(player.reflex);
-//   $("#randTech").text(player.tech);
-//   $("#randCool").text(player.cool);
-//   $("#randLuck").text(player.luck);
-//   $("#randAttract").text(player.attractive);
-//   $("#randEmpathy").text(player.empathy);
-//   $("#randomCharacterDescription").show();
-//   $( `#${player.characterType.toLowerCase()}`).show();
-// });
+$("#randomize, #again").on('click', function(){
+  $("#playerSelectScreen").hide();
+  $("#randomizePlayerScreen, #randomCD, #randoStats").show();
+  let game = new Game();
+  let player = game.generateCharacter();
+  console.log(player);
+  $("#randoName").text(player.playerName);
+  $("#randoClass").text(player.characterType);
+  $("#randIntel").text(player.intel);
+  $("#randReflex").text(player.reflex);
+  $("#randTech").text(player.tech);
+  $("#randCool").text(player.cool);
+  $("#randLuck").text(player.luck);
+  $("#randAttract").text(player.attractive);
+  $("#randEmpathy").text(player.empathy);
+  if(player.characterType.toLowerCase() === "rockerboy" ){
+    $("#randCD, #randrockerboy").show();
+    $("#randsolo, #randnetrunner, #randtechie, #randmedia, #randcop, #randcorpo, #randfixer, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "solo"){
+    $("#randCD,#randsolo").show();
+    $("#randrockerboy, #randnetrunner, #randtechie, #randmedia, #randcop, #randcorpo, #randfixer, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "netrunner"){
+    $("#randCD, #randnetrunner").show();
+    $("#randsolo, #randrockerboy, #randtechie, #randmedia, #randcop, #randcorpo, #randfixer, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "techie"){
+    $("#randCD, #randtechie").show();
+    $("#randsolo, #randnetrunner, #randrockerboy, #randmedia, #randcop, #randcorpo, #randfixer, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "media"){
+    $("#randCD, #randmedia").show();
+    $("#randsolo, #randnetrunner, #randtechie, #randrockerboy, #randcop, #randcorpo, #randfixer, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "cop"){
+    $("#randCD,#randcop").show();
+    $("#randrockerboy,#randsolo, #randnetrunner, #randtechie, #randmedia, #randcorpo, #randfixer, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "corpo"){
+    $("#randCD, #randcorpo").show();
+    $("#randrockerboy, #randsolo, #randnetrunner, #randtechie, #randmedia, #randcop, #randfixer, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "fixer"){
+    $("#randCD, #randfixer").show();
+    $("#randrockerboy, #randsolo, #randnetrunner, #randtechie, #randmedia, #randcop, #randcorpo, #randnomad").hide();
+  }else if(player.characterType.toLowerCase() === "nomad"){
+    $("#randCD, #randnomad").show();
+    $("#randrockerboy,#randsolo, #randnetrunner, #randtechie, #randmedia, #randcop, #randcorpo, #randfixer").hide();
+  }else{
+    $("#randCD, #randrockerboy,#randsolo, #randnetrunner, #randtechie, #randmedia, #randcop, #randcorpo, #randfixer, #randnomad").hide();
+  }
+});
 
-// 
+
 
 
 

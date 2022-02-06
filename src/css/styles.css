@@ -1,9 +1,9 @@
 body{
-background-color:black;
-font-family: moby, sans-serif;
-font-weight: 700;
-font-style: normal;
-color: #ff577d;
+  background-color:black;
+  font-family: lores-12,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ff577d;
 }
 h1{
   font-family: ethnocentric, sans-serif;
@@ -17,15 +17,12 @@ h1{
   0 0 42px #0a9cf5,
   0 0 82px #ff2a6d,
   0 0 92px #0a9cf5;
+  margin-bottom: 20px;
 }
 h2{
   text-align: center;
 }
-/* .container{
-  background-color: #29132e;
-  border-radius: 10px;
-  align-items: center;
-} */
+
 #startGame{
   background-color: #0a9cf5;
   position: absolute;
@@ -38,7 +35,7 @@ h2{
   border-radius: 10px;
   font-family: ethnocentric, sans-serif;
 }
-#create, #randomize, #accept, #again, #createStart{
+#create, #randomize, #createStart{
   background-color: #0a9cf5;
   display: block;
   margin: auto;
@@ -49,18 +46,21 @@ h2{
   text-align: center;
   padding: 20px;
   border-radius: 10px;
-  font-family: ethnocentric, sans-serif; 
+  font-family: ethnocentric, sans-serif;
 }
-.gameStart{
+#accept, #again{
   background-color: #0a9cf5;
-  display: block;
-  margin:auto;
+  display: inline-block;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
   color: black;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
   font-family: ethnocentric, sans-serif;
 }
+
 #startGame:hover, #startGame:active, #create:active,#create:hover, #randomize:active,#randomize:hover, #accept:active,#accept:hover, #again:active, #again:hover{
   color: #ff2a6d;
   box-shadow: 0 0 7px #ff2a6d,
@@ -85,7 +85,7 @@ h2{
 }
 
 
-#characterDescription h2{
+#characterDescription h2, #randCD h2{
   text-shadow: 0 0 7px #ff2a6d,
   0 0 10px #0a9cf5,
   0 0 21px #ff2a6d,
