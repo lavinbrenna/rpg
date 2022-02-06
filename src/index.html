@@ -2,291 +2,463 @@
 <html lang="en">
 
 <head>
-  <title>SuperGame</title>
+  <title>Cyberpunk RPG</title>
   <link rel="stylesheet" href="https://use.typekit.net/ppy2xqh.css" />
   <link rel="stylesheet" href="https://use.typekit.net/ppy2xqh.css" />
 </head>
 
 <body>
-  <div class="container">
-    <div id="startGameScreen">
-      <div id="startGame">Start New Game</div>
+  <div id="startGameScreen">
+    <div id="startGame">Start New Game</div>
+  </div>
+
+  <div id="playerSelectScreen">
+    <h1>Choose how to create your character</h1>
+    <div id="playerSelect">
+      <div id="create">Create Your Character</div>
+      <div id="randomize">Randomize Your Character</div>
+    </div>
+  </div>
+
+  <div id="createPlayerScreen">
+    <h1>Create your character</h1>
+    <h2>You have 65 points to use for your abilities. Choose them wisely.</h2>
+    <div class="row">
+      <div class="col-6">
+        <div id="createPlayer">
+          <form id="createPlayerForm">
+            <div id="form-group">
+              <label for="playerName">Enter your name:</label>
+              <input type="text" id="playerName" />
+            </div>
+            <div id="form-group">
+              <label for="class">Select your class:</label>
+              <select id="classType">
+                <option value="default">------</option>
+                <option value="rockerboy">Rockerboy</option>
+                <option value="solo">Solo</option>
+                <option value="netrunner">Netrunner</option>
+                <option value="techie">Techie</option>
+                <option value="media">Media</option>
+                <option value="cop">Cop</option>
+                <option value="corpo">Corpo</option>
+                <option value="fixer">Fixer</option>
+                <option value="nomad">Nomad</option>
+              </select>
+            </div>
+            <div id="form-group">
+              <label for="intelligence">Intelligence</label>
+              <input type="number" min=0 max=10 id="inputIntell" default=0 />
+            </div>
+            <div id="form-group">
+              <label for="reflex">Reflexes</label>
+              <input type="number" min=0 max=10 id="inputRef" default=0 />
+            </div>
+            <div id="form-group">
+              <label for="tech">Technical Ability</label>
+              <input type="number" min=0 max=10 id="inputTech" default=0 />
+            </div>
+            <div id="form-group">
+              <label for="cool">Cool</label>
+              <input type="number" min=0 max=10 id="inputCool" default=0 />
+            </div>
+            <div id="form-group">
+              <label for="luck">Luck</label>
+              <input type="number" min=0 max=10 id="inputLuck" default=0 />
+            </div>
+            <div id="form-group">
+              <label for="attractive">Attractiveness</label>
+              <input type="number" min=0 max=10 id="inputAttractive" default=0 />
+            </div>
+            <div id="form-group">
+              <label for="empathy">Empathy</label>
+              <input type="number" min=0 max=10 id="inputEmpathy" default=0 />
+            </div>
+          </form>
+          <button type="button" id="createStart">Start Game</button>
+        </div>
+      </div>
+      <div class="col-6">
+        <div id="characterDescription">
+          <div id="rockerboy">
+            <h2>Rockerboy</h2>
+            <p>Rebel rockers who use music and revolt to fight authority</p>
+            <p>
+              Rockerboys are the medieval bards of the dark future, the rebels,
+              the punks and the musicians who use their voice to inspire the
+              masses. Rockerboys are there to spread the anti-corporate message,
+              to inform the downtrodden and weak and to lead groups into battle.
+              The most famous Rockerboy to ever live is Johnny Silverhand; a
+              soldier gone AWOL, he leads the band Samurai all the while
+              plotting against the evil Arasaka corporation.
+            </p>
+          </div>
+          <div id="solo">
+            <h2>Solo</h2>
+            <p>Hired assassins, bodyguards, killers, soldiers</p>
+            <p>
+              Typically ex-military, almost certainly cyber-enhanced with more
+              weaponry than a small army and ready to blow you away if somebody
+              was paying. The Solo is your typical gun for hire character class,
+              who thinks first, asks questions later and collects a paycheck for
+              it. Morgan Blackhand, described as the Solo's Solo, is the most
+              famous of these mercenaries.
+            </p>
+          </div>
+          <div id="netrunner">
+            <h2>Netrunner</h2>
+            <p>Cybernetic computer hackers</p>
+            <p>
+              Fanatics of the workings of the Net. Rather than living in
+              realspace where their abilities are limited by reality, Netrunners
+              prefer to experience life through the means offered within the
+              Net's artificial universe. With unique access to the Menu, they
+              find themselves naturally savvy in sapping company networks and
+              breaking into high-priority security systems for both a living and
+              entertainment. These network trespasses are necessary to steal
+              funds and information from networks. The data that is stolen is
+              generally sold to a third party buyer, however this data does not
+              come free, as the Netrunner must undergo the ultimate challenge of
+              man versus machine in bypassing counter-intrusion programs that
+              guard the techno-fortresses of the Net.
+            </p>
+          </div>
+          <div id="techie">
+            <h2>Techie</h2>
+            <p>Renegade mechanics and doctors</p>
+            <p>
+              Techies typically have the highest tech stat of the group and play
+              an important role making tech work for them.If you're any good,
+              you're making a lot of money. And that money goes into new
+              gadgets, hardware and information. You'll buy almost any new
+              thing- because it might have a dozen side applications you can
+              use. Of course, your black market work isn't just making you
+              friends-it's also racking you up an impressive number of enemies
+              as well; people who've run into your handiwork and resented it. So
+              you'll invest a lot in defense systems and, if really pushed to
+              the wall, call in a few markers on a Solo or two.
+            </p>
+          </div>
+          <div id="media">
+            <h2>Media</h2>
+            <p>Newsmen and reporters who go to the wall for the truth</p>
+            <p>
+              They're bending the truth out there. And you're going to stop
+              them. Someone has to do it. The Corporations rule the world. They
+              dump toxins, destabilize economies and commit murder with equal
+              impunity. The Government won't stop them-they own the Government.
+              The only thing between the Corporations and world domination is
+              the Media. And that's you.
+            </p>
+          </div>
+          <div id="cop">
+            <h2>Cop</h2>
+            <p>Maximum lawmen on mean 21st century streets</p>
+            <p>
+              In the old days, they only used to shoot at cops. Now you're lucky
+              if you just take a slug. The Street is mean these days, filled
+              with new drugs, new gangs, and new weapons that make an M-16 look
+              like a kid's toy. If you're on a City Force, you know how bad it
+              is. You're carrying at least four high caliber weapons, most of
+              them full-auto types, wearing a Kevlar vest that'll stop 850
+              ft/lbs per square inch- and you're still outgunned and outflanked.
+              Half the gangs are cyber: super speed, super reflexes, enhanced
+              night-vision, weapons in their arms ... The other half are
+              freelance Corporate meres - gangs hired by the Corps to enforce
+              their policies on the street. And there you are - a beat cop or
+              detective in an armored squad-car, patrolling this jungle with the
+              heavy predators.
+            </p>
+          </div>
+          <div id="corpo">
+            <h2>Corpo</h2>
+            <p>Slick business raiders and multi-millionaires</p>
+            <p>
+              In the old days, they would have called you a yuppie - a hard
+              driven, fast-track MBA on his way up the Corporate ladder. Sure,
+              it's selling your soul to the Company, but face it; the
+              Corporations rule the Cyberpunk world. They control governments,
+              markets, nations, armies - you name it. And you know that whoever
+              controls the Corporations controls everything else.Right now, your
+              life as a junior executive is anything but easy. There are guys
+              underneath you who'd kill for a shot at your job. There are guys
+              over you who'd kill to keep you out of their jobs. And they're not
+              kidding about the killing - every up and comer in the Corporation
+              has his own crew of Solos and Netrunners to cover his pet
+              projects. Sabotage? Constantly. Bribery? Routine. Blackmail?
+              Common. Promotion by assassination? Always a possibility. The
+              stakes are that high - one slip and you could be out on the Street
+              with the rest of the trash, or dead.
+            </p>
+          </div>
+          <div id="fixer">
+            <h2>Fixer</h2>
+            <p>Deal makers, smugglers, organizers and information brokers</p>
+            <p>
+              You realized fast that you weren't ever going to get into a
+              Corporate job. And you didn't think you were tough enough or crazy
+              enough to be a Solo either. But as a small time punk, you knew you
+              had a knack for figuring out what other people wanted, and how to
+              get it for them. For a price, of course.Now your deals have moved
+              past the nickle and-dime stuff into the big time. Maybe you move
+              illegal weapons over the border. Or steal and resell medical
+              supplies from the Corporations. Perhaps you're a skill broker
+              acting as an agent for high priced Solos and 'Runners, or even
+              hiring a whole Nomad pack to back a client's contracts. You buy
+              and sell favors like an old-style Mafia godfather. You have
+              connections into all kinds of businesses, deals and political
+              groups. You don't do this directly, of course-no, you use your
+              contacts and allies as part of a vast web of intrigue and
+              coercion. If there's a hot nightclub in the City, you've bought
+              into it. If there are new military-class weapons on the Street,
+              you smuggled 'em in. If there's a Corporate war going down, you're
+              negotiating between sides with an eye on the main chance.
+            </p>
+          </div>
+          <div id="nomad">
+            <h2>Nomad</h2>
+            <p>Road warriors and gypsies who roam the highways</p>
+            <p>
+              They drove your family off the Farm ten years ago. The
+              Corporations rolled in, took over the land, and put rent-a cops
+              all over the place. It wasn't the first time it'd happened; it
+              wouldn't be the last. Gradually, your family fell in with a bunch
+              of other homeless families, and they met another group ... until
+              you'd created a Nomad pack of nearly two hundred members.Now,
+              crammed into a huge, ragtag fleet of cars, vans, buses and RV's,
+              your Nomad pack roams the freeways. You look for supplies, odd
+              jobs and spare parts in a world where society has fragmented. The
+              pack is your home-it has teachers, Med Techs, leaders, and
+              mechanics it's virtually a town on wheels in which everyone is
+              related by marriage or kinship. Sometimes the Pack pulls into a
+              town just to fuel up or get grub. Other times, it swings south to
+              follow the harvest; you pick crops in trade for cash or food. Less
+              law abiding Packs are like mobile armies, terrorizing cities and
+              hiring out as muscle in Corporate wars. For obvious reasons, the
+              cops don't like Nomads. But it doesn't matter-your vehicles are
+              usually well armored and bristling with stolen weapons; mini guns,
+              rocket launchers and the like. Every kid knows how to use a rifle,
+              and everyone packs a knife. Being homeless in the 2000's isn't
+              easy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div id="randomizePlayerScreen">
+    <h1>Randomize Character</h1>
+    <div id="randoStats">
+      <p>Name: <span id="randoName"></span></p>
+      <p>Character Class: <span id="randoClass"></span></p>
+      <p>Intelligence: <span id="randIntel"></span></p>
+      <p>Reflexes: <span id="randReflex"></span></p>
+      <p>Technical Abilities: <span id="randTech"></span></p>
+      <p>Cool: <span id="randCool"></span></p>
+      <p>Luck: <span id="randLuck"></span></p>
+      <p>Attractiveness: <span id="randAttract"></span></p>
+      <p>Empathy: <span id="randEmpathy"></span></p>
+    </div>
+    <div id="randCD">
+      <div id="rockerboy">
+        <h2>Rockerboy</h2>
+        <p>Rebel rockers who use music and revolt to fight authority</p>
+        <p>
+          Rockerboys are the medieval bards of the dark future, the rebels,
+          the punks and the musicians who use their voice to inspire the
+          masses. Rockerboys are there to spread the anti-corporate message,
+          to inform the downtrodden and weak and to lead groups into battle.
+          The most famous Rockerboy to ever live is Johnny Silverhand; a
+          soldier gone AWOL, he leads the band Samurai all the while
+          plotting against the evil Arasaka corporation.
+        </p>
+      </div>
+      <div id="solo">
+        <h2>Solo</h2>
+        <p>Hired assassins, bodyguards, killers, soldiers</p>
+        <p>
+          Typically ex-military, almost certainly cyber-enhanced with more
+          weaponry than a small army and ready to blow you away if somebody
+          was paying. The Solo is your typical gun for hire character class,
+          who thinks first, asks questions later and collects a paycheck for
+          it. Morgan Blackhand, described as the Solo's Solo, is the most
+          famous of these mercenaries.
+        </p>
+      </div>
+      <div id="netrunner">
+        <h2>Netrunner</h2>
+        <p>Cybernetic computer hackers</p>
+        <p>
+          Fanatics of the workings of the Net. Rather than living in
+          realspace where their abilities are limited by reality, Netrunners
+          prefer to experience life through the means offered within the
+          Net's artificial universe. With unique access to the Menu, they
+          find themselves naturally savvy in sapping company networks and
+          breaking into high-priority security systems for both a living and
+          entertainment. These network trespasses are necessary to steal
+          funds and information from networks. The data that is stolen is
+          generally sold to a third party buyer, however this data does not
+          come free, as the Netrunner must undergo the ultimate challenge of
+          man versus machine in bypassing counter-intrusion programs that
+          guard the techno-fortresses of the Net.
+        </p>
+      </div>
+      <div id="techie">
+        <h2>Techie</h2>
+        <p>Renegade mechanics and doctors</p>
+        <p>
+          Techies typically have the highest tech stat of the group and play
+          an important role making tech work for them.If you're any good,
+          you're making a lot of money. And that money goes into new
+          gadgets, hardware and information. You'll buy almost any new
+          thing- because it might have a dozen side applications you can
+          use. Of course, your black market work isn't just making you
+          friends-it's also racking you up an impressive number of enemies
+          as well; people who've run into your handiwork and resented it. So
+          you'll invest a lot in defense systems and, if really pushed to
+          the wall, call in a few markers on a Solo or two.
+        </p>
+      </div>
+      <div id="media">
+        <h2>Media</h2>
+        <p>Newsmen and reporters who go to the wall for the truth</p>
+        <p>
+          They're bending the truth out there. And you're going to stop
+          them. Someone has to do it. The Corporations rule the world. They
+          dump toxins, destabilize economies and commit murder with equal
+          impunity. The Government won't stop them-they own the Government.
+          The only thing between the Corporations and world domination is
+          the Media. And that's you.
+        </p>
+      </div>
+      <div id="cop">
+        <h2>Cop</h2>
+        <p>Maximum lawmen on mean 21st century streets</p>
+        <p>
+          In the old days, they only used to shoot at cops. Now you're lucky
+          if you just take a slug. The Street is mean these days, filled
+          with new drugs, new gangs, and new weapons that make an M-16 look
+          like a kid's toy. If you're on a City Force, you know how bad it
+          is. You're carrying at least four high caliber weapons, most of
+          them full-auto types, wearing a Kevlar vest that'll stop 850
+          ft/lbs per square inch- and you're still outgunned and outflanked.
+          Half the gangs are cyber: super speed, super reflexes, enhanced
+          night-vision, weapons in their arms ... The other half are
+          freelance Corporate meres - gangs hired by the Corps to enforce
+          their policies on the street. And there you are - a beat cop or
+          detective in an armored squad-car, patrolling this jungle with the
+          heavy predators.
+        </p>
+      </div>
+      <div id="corpo">
+        <h2>Corpo</h2>
+        <p>Slick business raiders and multi-millionaires</p>
+        <p>
+          In the old days, they would have called you a yuppie - a hard
+          driven, fast-track MBA on his way up the Corporate ladder. Sure,
+          it's selling your soul to the Company, but face it; the
+          Corporations rule the Cyberpunk world. They control governments,
+          markets, nations, armies - you name it. And you know that whoever
+          controls the Corporations controls everything else.Right now, your
+          life as a junior executive is anything but easy. There are guys
+          underneath you who'd kill for a shot at your job. There are guys
+          over you who'd kill to keep you out of their jobs. And they're not
+          kidding about the killing - every up and comer in the Corporation
+          has his own crew of Solos and Netrunners to cover his pet
+          projects. Sabotage? Constantly. Bribery? Routine. Blackmail?
+          Common. Promotion by assassination? Always a possibility. The
+          stakes are that high - one slip and you could be out on the Street
+          with the rest of the trash, or dead.
+        </p>
+      </div>
+      <div id="fixer">
+        <h2>Fixer</h2>
+        <p>Deal makers, smugglers, organizers and information brokers</p>
+        <p>
+          You realized fast that you weren't ever going to get into a
+          Corporate job. And you didn't think you were tough enough or crazy
+          enough to be a Solo either. But as a small time punk, you knew you
+          had a knack for figuring out what other people wanted, and how to
+          get it for them. For a price, of course.Now your deals have moved
+          past the nickle and-dime stuff into the big time. Maybe you move
+          illegal weapons over the border. Or steal and resell medical
+          supplies from the Corporations. Perhaps you're a skill broker
+          acting as an agent for high priced Solos and 'Runners, or even
+          hiring a whole Nomad pack to back a client's contracts. You buy
+          and sell favors like an old-style Mafia godfather. You have
+          connections into all kinds of businesses, deals and political
+          groups. You don't do this directly, of course-no, you use your
+          contacts and allies as part of a vast web of intrigue and
+          coercion. If there's a hot nightclub in the City, you've bought
+          into it. If there are new military-class weapons on the Street,
+          you smuggled 'em in. If there's a Corporate war going down, you're
+          negotiating between sides with an eye on the main chance.
+        </p>
+      </div>
+      <div id="nomad">
+        <h2>Nomad</h2>
+        <p>Road warriors and gypsies who roam the highways</p>
+        <p>
+          They drove your family off the Farm ten years ago. The
+          Corporations rolled in, took over the land, and put rent-a cops
+          all over the place. It wasn't the first time it'd happened; it
+          wouldn't be the last. Gradually, your family fell in with a bunch
+          of other homeless families, and they met another group ... until
+          you'd created a Nomad pack of nearly two hundred members.Now,
+          crammed into a huge, ragtag fleet of cars, vans, buses and RV's,
+          your Nomad pack roams the freeways. You look for supplies, odd
+          jobs and spare parts in a world where society has fragmented. The
+          pack is your home-it has teachers, Med Techs, leaders, and
+          mechanics it's virtually a town on wheels in which everyone is
+          related by marriage or kinship. Sometimes the Pack pulls into a
+          town just to fuel up or get grub. Other times, it swings south to
+          follow the harvest; you pick crops in trade for cash or food. Less
+          law abiding Packs are like mobile armies, terrorizing cities and
+          hiring out as muscle in Corporate wars. For obvious reasons, the
+          cops don't like Nomads. But it doesn't matter-your vehicles are
+          usually well armored and bristling with stolen weapons; mini guns,
+          rocket launchers and the like. Every kid knows how to use a rifle,
+          and everyone packs a knife. Being homeless in the 2000's isn't
+          easy.
+        </p>
+      </div>
+    </div>
+    <div id="accept">Accept</div>
+    <div id="again">Again</div>
+  </div>
+
+  <div id="gameBox">
+    <div class="col-md">
+      <div id="playerBox">
+        <h3>Player</h3>
+        <p>Name:<span id="playersName"></span></p>
+        <p>Character Class:<span id="characterClass"></span></p>
+        <p>HP:<span id="playerHp"></span></p>
+        <p>Attack Damage:<span id="attack"></span></p>
+        <p>
+          Inventory:
+          <span id="playerInventory"> </span>
+        </p>
+        <button type="button" id="basicAttack">Attack</button>
+        <button type="button" id="specialAttack">
+          Special(coming soon)
+        </button>
+        <button type="button" id="block">Block(coming soon)</button>
+      </div>
     </div>
 
-    <div id="playerSelectScreen">
-      <h1>Choose how to create your character</h1>
-      <div id="playerSelect">
-        <div id="create">Create Your Character</div>
-        <div id="randomize">Randomize Your Character</div>
-      </div>
-    </div>
-
-    <div id="createPlayerScreen">
-      <h1>Create your character</h1>
-      <p>You have 65 points to use for your abilities. Choose them wisely.</p>
-      <div id="playerScold">
-        <p><span id="scold"></span></p>
-      </div>
-      <form id="createPlayerForm">
-        <div id="form-group">
-          <label for="playerName">Enter your name:</label>
-          <input type="text" id="playerName" />
-        </div>
-        <div id="form-group">
-          <label for="class">Select your class:</label>
-          <select id="classType">
-            <option value="default">------</option>
-            <option value="rockerBoy">Rockerboy</option>
-            <option value="solo">Solo</option>
-            <option value="netrunner">Netrunner</option>
-            <option value="techie">Techie</option>
-            <option value="media">Media</option>
-            <option value="cop">Cop</option>
-            <option value="corpo">Corpo</option>
-            <option value="fixer">Fixer</option>
-            <option value="nomad">Nomad</option>
-          </select>
-        </div>
-        <div id="form-group">
-          <label for="intelligence">Intelligence</label>
-          <input type="number" min=0 max=10 id="inputIntell" default=0 />
-        </div>
-        <div id="form-group">
-          <label for="reflex">Reflexes</label>
-          <input type="number" min=0 max=10 id="inputRef" default=0/>
-        </div>
-        <div id="form-group">
-          <label for="tech">Technical Ability</label>
-          <input type="number" min=0 max=10 id="inputTech" default=0/>
-        </div>
-        <div id="form-group">
-          <label for="cool">Cool</label>
-          <input type="number" min=0 max=10 id="inputCool" default=0/>
-        </div>
-        <div id="form-group">
-          <label for="luck">Luck</label>
-          <input type="number" min=0 max=10 id="inputLuck" default=0/>
-        </div>
-        <div id="form-group">
-          <label for="attractive">Attractiveness</label>
-          <input type="number" min=0 max=10 id="inputAttractive" default=0/>
-        </div>
-        <div id="form-group">
-          <label for="empathy">Empathy</label>
-          <input type="number" min=0 max=10 id="inputEmpathy" default=0/>
-        </div>
-        <button type="submit" id="createStart">Start Game</button>
-      </form>
-      <div id="characterDescription">
-        <div id="rockerBoy">
-          <h2>Rockerboy</h2>
-          <p>Rebel rockers who use music and revolt to fight authority</p>
-          <p>
-            Rockerboys are the medieval bards of the dark future, the rebels,
-            the punks and the musicians who use their voice to inspire the
-            masses. Rockerboys are there to spread the anti-corporate message,
-            to inform the downtrodden and weak and to lead groups into battle.
-            The most famous Rockerboy to ever live is Johnny Silverhand; a
-            soldier gone AWOL, he leads the band Samurai all the while
-            plotting against the evil Arasaka corporation.
-          </p>
-        </div>
-        <div id="solo">
-          <h2>Solo</h2>
-          <p>Hired assassins, bodyguards, killers, soldiers</p>
-          <p>
-            Typically ex-military, almost certainly cyber-enhanced with more
-            weaponry than a small army and ready to blow you away if somebody
-            was paying. The Solo is your typical gun for hire character class,
-            who thinks first, asks questions later and collects a paycheck for
-            it. Morgan Blackhand, described as the Solo's Solo, is the most
-            famous of these mercenaries.
-          </p>
-        </div>
-        <div id="netrunner">
-          <h2>Netrunner</h2>
-          <p>Cybernetic computer hackers</p>
-          <p>
-            Fanatics of the workings of the Net. Rather than living in
-            realspace where their abilities are limited by reality, Netrunners
-            prefer to experience life through the means offered within the
-            Net's artificial universe. With unique access to the Menu, they
-            find themselves naturally savvy in sapping company networks and
-            breaking into high-priority security systems for both a living and
-            entertainment. These network trespasses are necessary to steal
-            funds and information from networks. The data that is stolen is
-            generally sold to a third party buyer, however this data does not
-            come free, as the Netrunner must undergo the ultimate challenge of
-            man versus machine in bypassing counter-intrusion programs that
-            guard the techno-fortresses of the Net.
-          </p>
-        </div>
-        <div id="techie">
-          <h2>Techie</h2>
-          <p>Renegade mechanics and doctors</p>
-          <p>
-            Techies typically have the highest tech stat of the group and play
-            an important role making tech work for them.If you're any good,
-            you're making a lot of money. And that money goes into new
-            gadgets, hardware and information. You'll buy almost any new
-            thing- because it might have a dozen side applications you can
-            use. Of course, your black market work isn't just making you
-            friends-it's also racking you up an impressive number of enemies
-            as well; people who've run into your handiwork and resented it. So
-            you'll invest a lot in defense systems and, if really pushed to
-            the wall, call in a few markers on a Solo or two.
-          </p>
-        </div>
-        <div id="media">
-          <h2>Media</h2>
-          <p>Newsmen and reporters who go to the wall for the truth</p>
-          <p>
-            They're bending the truth out there. And you're going to stop
-            them. Someone has to do it. The Corporations rule the world. They
-            dump toxins, destabilize economies and commit murder with equal
-            impunity. The Government won't stop them-they own the Government.
-            The only thing between the Corporations and world domination is
-            the Media. And that's you.
-          </p>
-        </div>
-        <div id="cop">
-          <h2>Cop</h2>
-          <p>Maximum lawmen on mean 21st century streets</p>
-          <p>
-            In the old days, they only used to shoot at cops. Now you're lucky
-            if you just take a slug. The Street is mean these days, filled
-            with new drugs, new gangs, and new weapons that make an M-16 look
-            like a kid's toy. If you're on a City Force, you know how bad it
-            is. You're carrying at least four high caliber weapons, most of
-            them full-auto types, wearing a Kevlar vest that'll stop 850
-            ft/lbs per square inch- and you're still outgunned and outflanked.
-            Half the gangs are cyber: super speed, super reflexes, enhanced
-            night-vision, weapons in their arms ... The other half are
-            freelance Corporate meres - gangs hired by the Corps to enforce
-            their policies on the street. And there you are - a beat cop or
-            detective in an armored squad-car, patrolling this jungle with the
-            heavy predators.
-          </p>
-        </div>
-        <div id="corpo">
-          <h2>Corpo</h2>
-          <p>Slick business raiders and multi-millionaires</p>
-          <p>
-            In the old days, they would have called you a yuppie - a hard
-            driven, fast-track MBA on his way up the Corporate ladder. Sure,
-            it's selling your soul to the Company, but face it; the
-            Corporations rule the Cyberpunk world. They control governments,
-            markets, nations, armies - you name it. And you know that whoever
-            controls the Corporations controls everything else.Right now, your
-            life as a junior executive is anything but easy. There are guys
-            underneath you who'd kill for a shot at your job. There are guys
-            over you who'd kill to keep you out of their jobs. And they're not
-            kidding about the killing - every up and comer in the Corporation
-            has his own crew of Solos and Netrunners to cover his pet
-            projects. Sabotage? Constantly. Bribery? Routine. Blackmail?
-            Common. Promotion by assassination? Always a possibility. The
-            stakes are that high - one slip and you could be out on the Street
-            with the rest of the trash, or dead.
-          </p>
-        </div>
-        <div id="fixer">
-          <h2>Fixer</h2>
-          <p>Deal makers, smugglers, organizers and information brokers</p>
-          <p>
-            You realized fast that you weren't ever going to get into a
-            Corporate job. And you didn't think you were tough enough or crazy
-            enough to be a Solo either. But as a small time punk, you knew you
-            had a knack for figuring out what other people wanted, and how to
-            get it for them. For a price, of course.Now your deals have moved
-            past the nickle and-dime stuff into the big time. Maybe you move
-            illegal weapons over the border. Or steal and resell medical
-            supplies from the Corporations. Perhaps you're a skill broker
-            acting as an agent for high priced Solos and 'Runners, or even
-            hiring a whole Nomad pack to back a client's contracts. You buy
-            and sell favors like an old-style Mafia godfather. You have
-            connections into all kinds of businesses, deals and political
-            groups. You don't do this directly, of course-no, you use your
-            contacts and allies as part of a vast web of intrigue and
-            coercion. If there's a hot nightclub in the City, you've bought
-            into it. If there are new military-class weapons on the Street,
-            you smuggled 'em in. If there's a Corporate war going down, you're
-            negotiating between sides with an eye on the main chance.
-          </p>
-        </div>
-        <div id="nomad">
-          <h2>Nomad</h2>
-          <p>Road warriors and gypsies who roam the highways</p>
-          <p>
-            They drove your family off the Farm ten years ago. The
-            Corporations rolled in, took over the land, and put rent-a cops
-            all over the place. It wasn't the first time it'd happened; it
-            wouldn't be the last. Gradually, your family fell in with a bunch
-            of other homeless families, and they met another group ... until
-            you'd created a Nomad pack of nearly two hundred members.Now,
-            crammed into a huge, ragtag fleet of cars, vans, buses and RV's,
-            your Nomad pack roams the freeways. You look for supplies, odd
-            jobs and spare parts in a world where society has fragmented. The
-            pack is your home-it has teachers, Med Techs, leaders, and
-            mechanics it's virtually a town on wheels in which everyone is
-            related by marriage or kinship. Sometimes the Pack pulls into a
-            town just to fuel up or get grub. Other times, it swings south to
-            follow the harvest; you pick crops in trade for cash or food. Less
-            law abiding Packs are like mobile armies, terrorizing cities and
-            hiring out as muscle in Corporate wars. For obvious reasons, the
-            cops don't like Nomads. But it doesn't matter-your vehicles are
-            usually well armored and bristling with stolen weapons; mini guns,
-            rocket launchers and the like. Every kid knows how to use a rifle,
-            and everyone packs a knife. Being homeless in the 2000's isn't
-            easy.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div id="randomizePlayerScreen">
-      <h1>Randomize Character</h1>
-      <form id="randomForm">
-        <div id="form-group">
-          <label for="playerName2">Enter your name: </label>
-          <input type="text" id="playerName2">
-        </div>
-        <button type="submit" id="accept">Accept</button>
-      <button type="button" id="again">Generate Again</button>
-      </form>
-      <p></p>
-    </div>
-    <div id="gameBox">
-      <div class="col-med">
-        <div id="playerBox">
-          <h3>Player</h3>
-          <p>Name:<span id="playersName"></span></p>
-          <p>Character Class:<span id="characterClass"></span></p>
-          <p>HP:<span id="playerHp"></span></p>
-          <p>Attack Damage:<span id="attack"></span></p>
-          <p>
-            Inventory:
-            <span id="playerInventory"> </span>
-          </p>
-          <button type="button" id="basicAttack">Attack</button>
-          <button type="button" id="specialAttack">
-            Special(coming soon)
-          </button>
-          <button type="button" id="block">Block(coming soon)</button>
-        </div>
-      </div>
-
-      <div class="col-med">
-        <div id="enemyBox">
-          <h3>Enemy</h3>
-          <p>Type: <span id="enemyTypeBox"></span></p>
-          <p>HP:<span id="enemyHp"></span></p>
-          <p>Attack Damage:<span id="enemyAttackBox"></span></p>
-          <p>Nap-Time Count: <span id="killCount"></span></p>
-        </div>
+    <div class="col-md">
+      <div id="enemyBox">
+        <h3>Enemy</h3>
+        <p>Type: <span id="enemyTypeBox"></span></p>
+        <p>HP:<span id="enemyHp"></span></p>
+        <p>Attack Damage:<span id="enemyAttackBox"></span></p>
+        <p>Nap-Time Count: <span id="killCount"></span></p>
       </div>
     </div>
   </div>
 </body>
 
 </html>
-
-<!--TODO: Create character selection screen with name input, character type (along with character descriptions), and stat selectors add generate stats button, add accept/submit button for it to move to combat screen-->

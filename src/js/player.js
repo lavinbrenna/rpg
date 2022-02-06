@@ -14,50 +14,6 @@ export default class Player{
     this.inventory = {};
   }
 
-  generateCharacter(){
-    this.characterType = this.randomizeCharacterType();
-    this.intel = this.d10Roll();
-    this.reflex = this.d10Roll();
-    this.tech = this.d10Roll();
-    this.cool = this.d10Roll();
-    this.luck = this.d10Roll();
-    this.attractive = this.d10Roll();
-    this.empathy = this.d10Roll();
-  }
-
-  randomizeCharacterType(){
-    let num =  Math.floor(Math.random()*9) + 1;
-    let character = '';
-    if(num === 1){
-      character = "Rockerboy";
-      return character;
-    }else if(num === 2){
-      character = "Solo";
-      return character;
-    }else if(num === 3){
-      character = "Netrunner";
-      return character;
-    }else if(num === 4){
-      character = "Techie";
-      return character;
-    }else if(num === 5){
-      character = "Media";
-      return character;
-    }else if(num === 6){
-      character = "Cop";
-      return character;
-    }else if(num === 7){
-      character = "Corpo";
-      return character;
-    }else if(num === 8){
-      character = "Fixer";
-      return character;
-    }
-    else{
-      character = "Nomad";
-      return character;
-    }
-  }
   d10Roll(){
     let num = Math.floor(Math.random()*10) + 1;
     return num;

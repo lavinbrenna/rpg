@@ -25,6 +25,7 @@ export class Game {
 
   generateCharacter(){
     let character = this.randomizeCharacterType();
+    let name = this.randomizeCharacterName();
     let intel = this.d10Roll();
     let reflex = this.d10Roll();
     let tech = this.d10Roll();
@@ -37,22 +38,24 @@ export class Game {
     while(total > 65){
       intel,reflex, tech, cool, luck, attractive, empathy = this.d10Roll();
       if(total <= 65){
-        let player = new Player(character,' ',intel, reflex, tech, cool, luck, attractive, empathy);
+        let player = new Player(character, name ,intel, reflex, tech, cool, luck, attractive, empathy);
         return player;
       }
-    }let player = new Player(character,' ',intel, reflex, tech, cool, luck, attractive, empathy);
+    }let player = new Player(character, name ,intel, reflex, tech, cool, luck, attractive, empathy);
     return player;
   }
   randomizeCharacterName(){
-
+    let randoNames = ['Alt', 'Ava', 'Da5id', 'Case', 'Richter', 'Dex', 'Tal', 'Yuki', 'Hiro', 'Bishop', 'Armitage', 'Neo', 'Deckard', 'Quaid', 'Joi', 'Mara', 'Melina', 'Panam', 'Wolf', 'Grey'];
+    let num = Math.floor(Math.random()* randoNames.length -1);
+    return randoNames[num];
   }
   randomizeCharacterType(){
     let num =  Math.floor(Math.random()*9);
-    let characterClasses = ['Rockerboy', 'Solo','Netrunner', 'Techie', 'Media', 'Cop', 'Corpo','Fixer', 'Nomad'];
+    let characterClasses = ['Rockerboy', 'solo','Netrunner', 'Techie', 'Media', 'Cop', 'Corpo','Fixer', 'Nomad'];
     let character = characterClasses[num];
     return character;
   }
-  
+
   d10Roll(){
     let num = Math.floor(Math.random()*10) + 1;
     return num;
@@ -129,53 +132,4 @@ create character generator, if user presses generate character, assign random d1
 
 TODO:
 Create check enemy method
- randomizeEnemy(){
-    let randomEnemies = [
-      {"enemyType":"Merc",
-        "health": 30,
-        "atkDmg": 10
-      },
-      {
-        "enemyType":"Mech",
-        "health": 50,
-        "atkDmg": 7
-      },
-      {
-        "enemyType":"Arasaka TriggerMan",
-        "health": 20,
-        "atkDmg": 15
-      },
-      {
-        "enemyType":"Militech Commando",
-        "health": 15,
-        "atkDmg": 10
-      },
-      {
-        "enemyType":"Netrunner",
-        "health": 10,
-        "atkDmg": 9
-      },
-      {
-        "enemyType":"Street Scrapper",
-        "health": 10,
-        "atkDmg": 5
-      },
-      {
-        "enemyType":"Street Samurai",
-        "health": 15,
-        "atkDmg": 8
-      },
-      {
-        "enemyType":"Wraith Marauder",
-        "health": 10,
-        "atkDmg": 8
-      }
-    ];
-    let num = Math.floor(Math.random() * 8) + 1;
-    console.log(randomEnemies[num]);
-    return randomEnemies[num];
-  }
-
-
-
 */

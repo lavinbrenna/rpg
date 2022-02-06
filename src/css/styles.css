@@ -18,11 +18,14 @@ h1{
   0 0 82px #ff2a6d,
   0 0 92px #0a9cf5;
 }
-.container{
+h2{
+  text-align: center;
+}
+/* .container{
   background-color: #29132e;
   border-radius: 10px;
   align-items: center;
-}
+} */
 #startGame{
   background-color: #0a9cf5;
   position: absolute;
@@ -48,17 +51,6 @@ h1{
   border-radius: 10px;
   font-family: ethnocentric, sans-serif; 
 }
-#accept, #again{
-  background-color: #0a9cf5;
-  display: inline-block;
-  margin: auto;
-  max-width: 50%;
-  color: black;
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  font-family: ethnocentric, sans-serif; 
-}
 .gameStart{
   background-color: #0a9cf5;
   display: block;
@@ -69,7 +61,7 @@ h1{
   border-radius: 10px;
   font-family: ethnocentric, sans-serif;
 }
-#startGame:active, #create:active, #randomize:active, #accept:active, #again:active{
+#startGame:hover, #startGame:active, #create:active,#create:hover, #randomize:active,#randomize:hover, #accept:active,#accept:hover, #again:active, #again:hover{
   color: #ff2a6d;
   box-shadow: 0 0 7px #ff2a6d,
   0 0 10px #0a9cf5,
@@ -81,17 +73,19 @@ h1{
   0 0 151px #0a9cf5;
   border: 0px;
 }
-#playerSelectScreen, #createPlayerScreen, #randomizePlayerScreen, #characterDescription{
+#playerSelectScreen, #createPlayerScreen, #randomizePlayerScreen, #randoStats, #randoCharacterDescription, #characterDescription{
   display: none;
 }
 
-#createPlayerScreen, #randomizePlayerScreen{
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  max-width: 50%;
+#createPlayer, #randomizePlayerScreen, #characterDescription{
+  margin: 20px;
+  text-align: justify;
+  padding: 10px;
+  float: left;
 }
-#characterDescription h2, p{
+
+
+#characterDescription h2{
   text-shadow: 0 0 7px #ff2a6d,
   0 0 10px #0a9cf5,
   0 0 21px #ff2a6d,

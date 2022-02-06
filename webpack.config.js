@@ -15,10 +15,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'SuperGame',
+      title: 'Cyberpunk RPG',
       template: './src/index.html',
-      inject: 'body'
-    })
+      inject: true
+    }),
   ],
   module: {
     rules: [
