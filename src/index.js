@@ -7,7 +7,6 @@ import {Game, Player} from './js/game.js';
 let game = new Game();
 
 
-
 function saveCreatedPlayer(){
   const name = $("input#playerName").val();
   const selectedClass = $("select#classType option:selected").val();
@@ -42,6 +41,7 @@ function saveRandomlyGeneratedCharacter(){
   let player = new Player(playerType, playerN, playerIn, playerFlex, playerT, playerC, playerL, playerA, playerE);
   return player;
 }
+
 $("#startGame").on('click', function () {
   $("#startGameScreen").hide();
   $("#playerSelectScreen").show();
@@ -159,71 +159,61 @@ $("#accept").on('click', function(){
 
 
 
-// /*
-// // $(".gameStart").on('click', function(){
-// //   let game = new Game();
-// //   let enemy = game.randomizeEnemy();
-// //   let player = savePlayerInfo();
-// //   game.addPlayer(player);
-// // });
+/*
 
-// //   enemy.wrongRandomizeEnemy();
-// //   //game.addPlayer(player);
-// //   game.addEnemy(enemy);
-// //   $("#createPlayerScreen").hide();
-// //   $("#gameBox").show();
-// // $("#playerHp").text(game.players[player.id].health);
-// // $('#enemyHp').text(game.enemies[game.enemyId].health);
-// // $('#playersName').text(game.players[player.id].playerName);
-// // $('#characterClass').text(game.players[player.id].characterType);
-// // $('#enemyTypeBox').text(game.enemies[game.enemyId].enemyType);
-// // $('#enemyAttackBox').text(game.enemies[game.enemyId].atkDmg);
-// // $('#attack').text(game.players[player.id].atkDmg);
-// // $('#playerInventory').text(game.players[player.id].inventory);
-// // $('#killCount').text(0);
-// // $("button#basicAttack").on('click', function(){
-// //   game.players[player.id].basicAttack();
-// //   game.playerTurn();
-// //   console.log("basic");
-// //   game.checkEnemy();
-// //   $("#basicAttack").prop("disabled",true);
-// //   $('#enemyTypeBox').text(game.enemies[game.enemyId].enemyType);
-// //   $('#enemyAttackBox').text(game.enemies[game.enemyId].atkDmg);
-// //   $("#playerHp").text(game.players[player.id].health); 
-// //   game.enemyTurn();
-// //   setTimeout(function() {
-// //     $("#basicAttack").prop("disabled",false);
-// //     $("#playerHp").text(game.players[player.id].health);
-// //   }, 2000);
-// //   $('#killCount').text(game.enemyId - 1);
-// //   $('#attack').text(game.players[player.id].atkDmg);
-// //   $('#enemyHp').text(game.enemies[game.enemyId].health);
-// //   });
-// //   $("#block").prop("disabled",true);
-// //   $("#specialAttack").prop("disabled",true);
-// //   $("button#specialAttack").on('click',function(){
-// //     game.players[player.id].specialAttack();
-// //     game.playerTurn();
-// //     console.log("special");
-// //     $("#playerHp").text(game.players[player.id].health); 
-// //     game.enemyTurn();
-// //     setTimeout(function() {
-// //       $("#playerHp").text(game.players[player.id].health); // yay this sorta works
-// //     }, 5000);
-// //     $('#attack').text(game.players[player.id].atkDmg);
-// //     $('#enemyHp').text(game.enemies[enemy.id].health);
-// //   });
-// //   $("button#block").on('click',function(){
-// //     game.players[player.id].block();
-// //     game.playerTurn();
-// //     console.log("block");
-// //     $("#playerHp").text(game.players[player.id].health); 
-// //     game.enemyTurn();
-// //     setTimeout(function() {
-// //       $("#playerHp").text(game.players[player.id].health); // yay this sorta works
-// //     }, 5000);
-// //     $('#attack').text(game.players[player.id].atkDmg);
-// //     $('#enemyHp').text(game.enemies[enemy.id].health);
-// //   });
-// // });
-// */
+
+// $("#playerHp").text(game.players[player.id].health);
+// $('#enemyHp').text(game.enemies[game.enemyId].health);
+// $('#playersName').text(game.players[player.id].playerName);
+// $('#characterClass').text(game.players[player.id].characterType);
+// $('#enemyTypeBox').text(game.enemies[game.enemyId].enemyType);
+// $('#enemyAttackBox').text(game.enemies[game.enemyId].atkDmg);
+// $('#attack').text(game.players[player.id].atkDmg);
+// $('#playerInventory').text(game.players[player.id].inventory);
+// $('#killCount').text(0);
+// $("button#basicAttack").on('click', function(){
+//   game.players[player.id].basicAttack();
+//   game.playerTurn();
+//   console.log("basic");
+//   game.checkEnemy();
+//   $("#basicAttack").prop("disabled",true);
+//   $('#enemyTypeBox').text(game.enemies[game.enemyId].enemyType);
+//   $('#enemyAttackBox').text(game.enemies[game.enemyId].atkDmg);
+//   $("#playerHp").text(game.players[player.id].health); 
+//   game.enemyTurn();
+//   setTimeout(function() {
+//     $("#basicAttack").prop("disabled",false);
+//     $("#playerHp").text(game.players[player.id].health);
+//   }, 2000);
+//   $('#killCount').text(game.enemyId - 1);
+//   $('#attack').text(game.players[player.id].atkDmg);
+//   $('#enemyHp').text(game.enemies[game.enemyId].health);
+//   });
+//   $("#block").prop("disabled",true);
+//   $("#specialAttack").prop("disabled",true);
+//   $("button#specialAttack").on('click',function(){
+//     game.players[player.id].specialAttack();
+//     game.playerTurn();
+//     console.log("special");
+//     $("#playerHp").text(game.players[player.id].health); 
+//     game.enemyTurn();
+//     setTimeout(function() {
+//       $("#playerHp").text(game.players[player.id].health); // yay this sorta works
+//     }, 5000);
+//     $('#attack').text(game.players[player.id].atkDmg);
+//     $('#enemyHp').text(game.enemies[enemy.id].health);
+//   });
+//   $("button#block").on('click',function(){
+//     game.players[player.id].block();
+//     game.playerTurn();
+//     console.log("block");
+//     $("#playerHp").text(game.players[player.id].health); 
+//     game.enemyTurn();
+//     setTimeout(function() {
+//       $("#playerHp").text(game.players[player.id].health); // yay this sorta works
+//     }, 5000);
+//     $('#attack').text(game.players[player.id].atkDmg);
+//     $('#enemyHp').text(game.enemies[enemy.id].health);
+//   });
+// });
+*/
